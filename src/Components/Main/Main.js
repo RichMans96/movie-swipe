@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Movie from './Movie/Movie';
 
 const Main = () => {
- const [movie, setMovie] = useState({});
- return (
-  <div>
-   <p>Main stuff goes here</p>
-  </div>
- );
+ return <Movie />;
 };
 
 export default Main;
