@@ -30,3 +30,11 @@ export const MovieRating = styled.p`
  font-size: 30px;
  text-align: center;
 `;
+
+export const MoviePosterWrapper = styled.div`
+ height: 400px;
+ width: 200px;
+ display: flex;
+ justify-content: center;
+ margin: 10px 0;
+`;
