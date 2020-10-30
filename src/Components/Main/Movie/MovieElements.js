@@ -6,7 +6,7 @@ export const MovieContainer = styled.div`
  flex-direction: column;
  justify-content: center;
  align-items: center;
- height: 800px;
+ height: 100%;
  position: relative;
 `;
 
@@ -17,7 +17,7 @@ export const MovieTitle = styled.h1`
 `;
 
 export const MovieDescription = styled.p`
- margin-top: 24px;
+ margin: 24px;
  color: #fff;
  font-size: 24px;
  text-align: center;

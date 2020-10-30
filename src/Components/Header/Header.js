@@ -4,7 +4,7 @@ import { HeaderContainer, HeaderH1 } from './HeaderElements';
 const Header = () => {
  return (
   <HeaderContainer>
-   <HeaderH1>Movie Swiper</HeaderH1>
+   <HeaderH1>Find Me A Movie!</HeaderH1>
   </HeaderContainer>
  );
 };
