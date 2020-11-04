@@ -6,9 +6,18 @@ export const MovieContainer = styled.div`
  justify-content: center;
  align-items: center;
  background-color: #2a2b2e;
+ height: 1000px;
 `;
 
 export const NextMovie = styled.button`
- height: 25px;
- width: 50px;
+ border-radius: 50px;
+ white-space: nowrap;
+ padding: 14px 36px;
+ font-size: 16px;
+ outline: none;
+ border: none;
+ cursor: pointer;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 `;

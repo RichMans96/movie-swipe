@@ -17,6 +17,8 @@ const Movie = () => {
   });
  }
 
+ console.log(rank.movieNo);
+
  async function fetchData(page) {
   setIsLoading(true);
   const result = await axios(
