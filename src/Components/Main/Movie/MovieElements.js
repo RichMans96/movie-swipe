@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 
 export const MovieContainer = styled.div`
+ background-color: #2a2b2e;
+ height: 1100px;
+`;
+
+export const MovieWrapper = styled.div`
  display: flex;
  flex-direction: row;
  justify-content: center;
  align-items: center;
- background-color: #2a2b2e;
- height: 1000px;
+
+ @media screen and (max-width: 768px) {
+  flex-direction: column;
+ }
 `;
 
 export const NextMovie = styled.button`

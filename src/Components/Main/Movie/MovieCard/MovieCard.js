@@ -1,5 +1,4 @@
 import React from 'react';
-import Loader from '../../../Misc/Loader';
 import {
  MovieCardContainer,
  MovieDescription,
@@ -8,28 +7,27 @@ import {
  MoviePosterWrapper,
 } from './MovieCardElements';
 
-const MovieCard = ({ movie, isLoading, url, size, movieNum }) => {
+const MovieCard = ({ movie, url, size, movieNum }) => {
+ console.log(movie);
  return (
   <>
-   {isLoading ? (
-    <MovieCardContainer>
-     <Loader />
-    </MovieCardContainer>
-   ) : (
-    <MovieCardContainer>
-     <MovieTitle>{movie[movieNum].original_title}</MovieTitle>
-     <MoviePosterWrapper>
-      <img
-       src={`${url}${size}${movie[movieNum].poster_path}`}
-       alt={movie[movieNum].original_title}></img>
-     </MoviePosterWrapper>
-     <MovieDescription>{movie[movieNum].overview}</MovieDescription>
-     <MovieDescription>
-      Released: {movie[movieNum].release_date}
-     </MovieDescription>
-     <MovieRating>Rating: {movie[movieNum].vote_average}</MovieRating>
-    </MovieCardContainer>
-   )}
+   <MovieCardContainer>
+    <MovieTitle>{movie[movieNum].original_title}</MovieTitle>
+    <MoviePosterWrapper>
+     <img
+      src={`${url}${size}${movie[movieNum].poster_path}`}
+      alt={movie[movieNum].title}></img>
+    </MoviePosterWrapper>
+    <MovieDescription>
+     {movie[movieNum].overview
+      ? movie[movieNum].overview
+      : 'Sorry, no overview provided!'}
+    </MovieDescription>
+    <MovieDescription>
+     Released: {movie[movieNum].release_date}
+    </MovieDescription>
+    <MovieRating>Rating: {movie[movieNum].vote_average}</MovieRating>
+   </MovieCardContainer>
   </>
  );
 };

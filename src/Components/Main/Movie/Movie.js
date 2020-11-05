@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard/MovieCard';
-import { MovieContainer, NextMovie } from './MovieElements';
+import { MovieContainer, MovieWrapper, NextMovie } from './MovieElements';
+import Loader from '../../Misc/Loader';
 
 const Movie = () => {
  const [rank, setRank] = useState({ pageNo: 1, movieNo: 1 });
@@ -17,8 +18,6 @@ const Movie = () => {
   });
  }
 
- console.log(rank.movieNo);
-
  async function fetchData(page) {
   setIsLoading(true);
   const result = await axios(
@@ -33,16 +32,27 @@ const Movie = () => {
  }, [rank]);
 
  return (
-  <MovieContainer>
-   <MovieCard
-    movie={movie}
-    isLoading={isLoading}
-    url={imageUrl}
-    size={'w342'}
-    movieNum={rank.movieNo}
-   />
-   <NextMovie onClick={handleClick}>Next!</NextMovie>
-  </MovieContainer>
+  <>
+   {isLoading ? (
+    <MovieContainer>
+     <MovieWrapper>
+      <Loader />
+     </MovieWrapper>
+    </MovieContainer>
+   ) : (
+    <MovieContainer>
+     <MovieWrapper>
+      <MovieCard
+       movie={movie}
+       url={imageUrl}
+       size={'w342'}
+       movieNum={rank.movieNo}
+      />
+      <NextMovie onClick={handleClick}>Next!</NextMovie>
+     </MovieWrapper>
+    </MovieContainer>
+   )}
+  </>
  );
 };
 
